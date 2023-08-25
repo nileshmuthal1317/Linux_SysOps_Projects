@@ -1,4 +1,4 @@
-# Linux SysOps Projects and Documentation
+# Linux SysOps Project Documentation
 
 ## Introduction
 
