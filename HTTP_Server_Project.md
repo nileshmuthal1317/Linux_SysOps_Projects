@@ -24,3 +24,36 @@ firewall-cmd --reload
 Test the URL of any local browser `http://server_IP_address/`
 
 ### Apache Virtual Host: Host multiple websites on a single server.
+
+By default CentOS cosider all `.conf` file
+Create a new `.conf` file for each website user `/etc/httpd/conf.d/` 
+```
+vim /etc/httpd/conf.d/website1.conf
+
+<VirtualHost *:80>
+    ServerName www.website1.com
+    DocumentRoot /var/www/website1
+</VirtualHost>
+
+vim /etc/httpd/conf.d/website2.conf
+
+<VirtualHost *:80>
+    ServerName www.website2.com
+    DocumentRoot /var/www/website2
+</VirtualHost>
+```
+**Upload the website in respective DocumentRoot folders**
+
+Test Configuration and Restart Apache
+```
+apachectl configtest; systemctl restart httpd
+```
+**For DNS configuration, update the hosts file on your local system.**
+- For Windows `C:\Windows\System32\drivers\etc\hosts`
+- For Linux `/etc/hosts`
+```
+<Server_IP_Address> <Website name as configured in virtual host conf file>
+192.168.128.129 www.website.com
+192.168.128.129 www.website1.com
+192.168.128.129 www.website2.com
+```
