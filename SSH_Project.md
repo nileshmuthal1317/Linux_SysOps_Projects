@@ -22,7 +22,6 @@ Accessing the server
 ssh username@remote_host
 ssh -p port_number username@remote_host
 ```
-<br></br>
 
 ### Configuration for Passwordless (Key-Based) Authentication.
 
@@ -53,7 +52,6 @@ Executing Commands Remotely
 ```
 ssh username@remote_host command
 ``` 
-<br></br>
 
 ### Common configuration options in `/etc/ssh/ssh_config`.
 
