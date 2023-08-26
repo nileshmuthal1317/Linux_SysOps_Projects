@@ -1,6 +1,6 @@
 # Title: Deploying SSH Server for Secure Remote access  
 
-## Description: Explore the implementation of encrypted remote access and secure command-line execution.
+### Description: Explore the implementation of encrypted remote access and secure command-line execution.
 
 Server Side: Install SSH Server 	
 ```
@@ -55,7 +55,7 @@ ssh username@remote_host command
 ``` 
 <br></br>
 
-## Common configuration options in `/etc/ssh/ssh_config`
+### Common configuration options in `/etc/ssh/ssh_config`
 
 `PasswordAuthentication no`
 `Port 2222`
