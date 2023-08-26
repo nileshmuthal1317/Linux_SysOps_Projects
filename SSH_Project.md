@@ -1,46 +1,65 @@
-# Deploying SSH Server and Client for remote access
+# Title: Deploying SSH Server for Secure Remote access  
 
-Title: Deploying SSH Server for Secure Remote access  
-Description: Explore the implementation of encrypted remote access and secure command-line execution.
+## Description: Explore the implementation of encrypted remote access and secure command-line execution.
 
-## Server Side Configurations
+Server Side
 
-Install OPENSSH-SERVER 	
+Server Side: Install SSH Server 	
 ```
 yum install openssh-server; systemctl restart ssh; systemctl enable sshd
 ```
-
-Check the firewall for port or service if not allowed add the rule in firewall
+Check Firewall for Port or Service and Add Rule if Not Allowed
 ```
 firewall-cmd --list-all | grep -e "ports" -e "services"
 ```
 ```
 sudo firewall-cmd --add-service=ssh --permanent; sudo firewall-cmd --reload
 ```
-
-**Configuration for passwordless(key-based) authentication and disabling the password based authentication**
-
-
-## Client side Configurations
-
-Install OPENSSH-CLIENT
+Client Side: Install SSH Client
 ```
 yum install openssh-client;
 ```
-
-SSH into the remote server using the password
+Accessing the server
 ```
-ssh remote_user@remote_server_IP
-```
-
-SSH into remote server using password-less(key-based) authentication
-```
-ssh-keygen
+ssh username@remote_host					# over standard port 22
+ssh -p port_number username@remote_host		# over specified port number
 ```
 
-Store the public key to the remote server
+**Configuration for Passwordless (Key-Based) Authentication and Disabling Password-Based Authentication**
+
+An SSH key pair can be generated or found in the ~/.ssh/ directory.
 ```
-ssh-copyid
+Private Key Location: ~/.ssh/id_rsa
+Public Key Location: ~/.ssh/id_rsa.pub
 ```
+
+Manual Server Side Method:
+``
+- Copy the public key of the client machine and store it in the server user's `~/.ssh/authorized_keys` file.
+- This enables access to the server using the key-based method, eliminating the need for a password.
+``
+
+**Alternatively, we can generate the key pair and copy the public key to the remote server.**
+
+Generate an SSH key pair on your local machine
+```
+ssh-keygen		# default encryption is usually RSA, set Passphrase to add layer of security  
+```
+Copy your public key to the remote server for authentication
+```
+ssh-copy-id username@remote_host
+```
+Executing Commands Remotely
+```
+ssh username@remote_host command
+```
+
+## Common configuration options in `/etc/ssh/ssh_config`
+
+`PasswordAuthentication no`
+`Port 2222`
+`PermitRootLogin yes`
+
+
 
 
