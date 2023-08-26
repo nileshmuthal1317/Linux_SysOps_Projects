@@ -21,4 +21,7 @@ firewall-cmd --add-service=http --permanent
 firewall-cmd --add-service=https --permanent
 firewall-cmd --reload
 ```
+Test the URL of any local browser 
+`http://server_IP_address/`
+
 ### Apache Virtual Host: Host multiple websites on a single server.
