@@ -21,7 +21,7 @@ firewall-cmd --add-service=http --permanent
 firewall-cmd --add-service=https --permanent
 firewall-cmd --reload
 ```
-Test the URL of any local browser `http://server_IP_address/`
+Test the URL in a local browser `http://server_IP_address/`
 
 ### Apache Virtual Host: Host multiple websites on a single server.
 
@@ -53,7 +53,8 @@ systemctl restart httpd; apachectl configtest
 - For Linux `/etc/hosts`
 ```
 <Server_IP_Address> <The website name should correspond to the configuration in the virtual host's conf file.>
-192.168.128.129 www.website.com
 192.168.128.129 www.website1.com
 192.168.128.129 www.website2.com
 ```
+Test the URL in a local browser `http://www.website1.com/`
+Test the URL in a local browser `http://www.website2.com/`
