@@ -2,8 +2,6 @@
 
 ## Description: Explore the implementation of encrypted remote access and secure command-line execution.
 
-Server Side
-
 Server Side: Install SSH Server 	
 ```
 yum install openssh-server; systemctl restart ssh; systemctl enable sshd
@@ -21,8 +19,8 @@ yum install openssh-client;
 ```
 Accessing the server
 ```
-ssh username@remote_host					# over standard port 22
-ssh -p port_number username@remote_host		# over specified port number
+ssh username@remote_hoss
+ssh -p port_number username@remote_host
 ```
 
 **Configuration for Passwordless (Key-Based) Authentication and Disabling Password-Based Authentication**
@@ -33,17 +31,18 @@ Private Key Location: ~/.ssh/id_rsa
 Public Key Location: ~/.ssh/id_rsa.pub
 ```
 
-Manual Server Side Method:
-``
+**Manual Server Side Method**
+
 - Copy the public key of the client machine and store it in the server user's `~/.ssh/authorized_keys` file.
 - This enables access to the server using the key-based method, eliminating the need for a password.
-``
+
 
 **Alternatively, we can generate the key pair and copy the public key to the remote server.**
+- Default encryption is usually RSA, set Passphrase to add layer of security  
 
 Generate an SSH key pair on your local machine
 ```
-ssh-keygen		# default encryption is usually RSA, set Passphrase to add layer of security  
+ssh-keygen 
 ```
 Copy your public key to the remote server for authentication
 ```
