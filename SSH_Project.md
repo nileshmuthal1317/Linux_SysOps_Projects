@@ -51,7 +51,8 @@ ssh-copy-id username@remote_host
 Executing Commands Remotely
 ```
 ssh username@remote_host command
-```                          
+``` 
+<br></br>
 
 ## Common configuration options in `/etc/ssh/ssh_config`
 
