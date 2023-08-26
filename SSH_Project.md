@@ -52,7 +52,8 @@ Executing Commands Remotely
 ```
 ssh username@remote_host command
 ```
-<br>
+
+
 ## Common configuration options in `/etc/ssh/ssh_config`
 
 `PasswordAuthentication no`
