@@ -19,7 +19,7 @@ yum install openssh-client;
 ```
 Accessing the server
 ```
-ssh username@remote_hoss
+ssh username@remote_host
 ssh -p port_number username@remote_host
 ```
 <br></br>
