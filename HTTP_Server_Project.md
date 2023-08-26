@@ -12,11 +12,13 @@ Install Apache
 ```
 yum install httpd; systemctl restart httpd; systemctl enable httpd
 ```
-Check Firewall for Port or Service and Add Rule if Not Allowed
+Ensure Firewall for Port or Service and Add Rule if Not Permitted
 ```
 firewall-cmd --list-all | grep -e "ports" -e "services"
 ```
 ```
-firewall-cmd --add-service=http https --permanent; firewall-cmd --reload
+firewall-cmd --add-service=http --permanent
+firewall-cmd --add-service=https --permanent
+firewall-cmd --reload
 ```
 ### Apache Virtual Host: Host multiple websites on a single server.

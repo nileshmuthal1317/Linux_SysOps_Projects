@@ -6,7 +6,7 @@ Server Side: Install SSH Server
 ```
 yum install openssh-server; systemctl restart ssh; systemctl enable sshd
 ```
-Check Firewall for Port or Service and Add Rule if Not Allowed
+Ensure Firewall for Port or Service and Add Rule if Not Permitted
 ```
 firewall-cmd --list-all | grep -e "ports" -e "services"
 ```
