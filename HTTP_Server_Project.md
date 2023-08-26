@@ -46,13 +46,13 @@ vim /etc/httpd/conf.d/website2.conf
 
 Test Configuration and Restart Apache
 ```
-apachectl configtest; systemctl restart httpd
+systemctl restart httpd; apachectl configtest
 ```
 **For DNS configuration, update the hosts file on your local system.**
 - For Windows `C:\Windows\System32\drivers\etc\hosts`
 - For Linux `/etc/hosts`
 ```
-<Server_IP_Address> <Website name as configured in virtual host conf file>
+<Server_IP_Address> <The website name should correspond to the configuration in the virtual host's conf file.>
 192.168.128.129 www.website.com
 192.168.128.129 www.website1.com
 192.168.128.129 www.website2.com
