@@ -1,4 +1,4 @@
-# Title: Deploying SSH Server for Secure Remote access  
+# Title: Deploying SSH Server for Secure Remote access.
 
 ### Description: Explore the implementation of encrypted remote access and secure command-line execution.
 
@@ -24,7 +24,7 @@ ssh -p port_number username@remote_host
 ```
 <br></br>
 
-### Configuration for Passwordless (Key-Based) Authentication and Disabling Password-Based Authentication
+### Configuration for Passwordless (Key-Based) Authentication.
 
 An SSH key pair can be generated or found in the ~/.ssh/ directory.
 ```
@@ -55,7 +55,7 @@ ssh username@remote_host command
 ``` 
 <br></br>
 
-### Common configuration options in `/etc/ssh/ssh_config`
+### Common configuration options in `/etc/ssh/ssh_config`.
 
 `PasswordAuthentication no`
 `Port 2222`
