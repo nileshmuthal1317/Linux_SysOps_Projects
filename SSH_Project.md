@@ -24,7 +24,7 @@ ssh -p port_number username@remote_host
 ```
 <br></br>
 
-**Configuration for Passwordless (Key-Based) Authentication and Disabling Password-Based Authentication**
+### Configuration for Passwordless (Key-Based) Authentication and Disabling Password-Based Authentication
 
 An SSH key pair can be generated or found in the ~/.ssh/ directory.
 ```
