@@ -110,14 +110,13 @@ http://www.website1.com
 
 Apache modules are like plugins for the Apache web server. They add extra features and abilities, such as handling secure connections, managing URLs, or improving performance. Modules are like building blocks that you can add or remove to tailor your web server's behavior to your website's needs.
 
-> `mod_rewrite` Use Case: Redirect URLs and rewrite paths.<br>
-`mod_ssl` Use Case: Enable HTTPS encryption.<br>
-`mod_proxy` Use Case: Proxy requests to backend servers.<br>
-`mod_auth_basic` Use Case: Implement basic HTTP authentication.<br>
-`mod_headers` Use Case: Modify HTTP headers.<br>
-`mod_expires` Use Case: Set content expiration dates.<br>
-`mod_deflate` Use Case: Compress web content for faster delivery.<br>
-`mod_security` Use Case: Protect against web attacks.<br>
-`mod_cgi` Use Case: Execute CGI scripts for dynamic content.<br>
-`mod_userdir` Use Case: Host user-specific content.
+**-** `mod_rewrite` Use Case: Redirect URLs and rewrite paths.<br>
+**-** `mod_ssl` Use Case: Enable HTTPS encryption.<br>
+**-** `mod_proxy` Use Case: Proxy requests to backend servers.<br>
+**-** `mod_auth_basic` Use Case: Implement basic HTTP authentication.<br>
+**-** `mod_headers` Use Case: Modify HTTP headers.<br>
+**-** `mod_expires` Use Case: Set content expiration dates.<br>
+**-** `mod_security` Use Case: Protect against web attacks.<br>
+**-** `mod_cgi` Use Case: Execute CGI scripts for dynamic content.<br>
+**-** `mod_userdir` Use Case: Host user-specific content.
 
