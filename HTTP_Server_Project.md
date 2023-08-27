@@ -136,13 +136,13 @@ HTTP status codes are short messages sent by web servers to browsers, conveying 
 
 #### Common HTTP Status Codes
 
-**-** `200 OK` The request was successful.
-**-** `201 Created` The request was successful, and a new resource was created.
-**-** `204 No Content` The request was successful, but there is no content to send in the response.
-**-** `301 Moved Permanently` The requested resource has been permanently moved to a new location.
-**-** `302 Found (Moved Temporarily)` The requested resource has been temporarily moved to a different location.
-**-** `400 Bad Request` The request was malformed or contains invalid parameters.
-**-** `401 Unauthorized` Authentication is required and has failed or has not been provided.
-**-** `403 Forbidden` The server understood the request, but the server refuses to authorize it.
-**-** `404 Not Found` The requested resource was not found on the server.
+**-** `200 OK` The request was successful.<br>
+**-** `201 Created` The request was successful, and a new resource was created.<br>
+**-** `204 No Content` The request was successful, but there is no content to send in the response.<br>
+**-** `301 Moved Permanently` The requested resource has been permanently moved to a new location.<br>
+**-** `302 Found (Moved Temporarily)` The requested resource has been temporarily moved to a different location.<br>
+**-** `400 Bad Request` The request was malformed or contains invalid parameters.<br>
+**-** `401 Unauthorized` Authentication is required and has failed or has not been provided.<br>
+**-** `403 Forbidden` The server understood the request, but the server refuses to authorize it.<br>
+**-** `404 Not Found` The requested resource was not found on the server.<br>
 **-** `500 Internal Server Error` The server encountered an error while processing the request.
