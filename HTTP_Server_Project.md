@@ -120,3 +120,38 @@ Apache modules are like plugins for the Apache web server. They add extra featur
 **-** `mod_cgi` Use Case: Execute CGI scripts for dynamic content.<br>
 **-** `mod_userdir` Use Case: Host user-specific content.
 
+###  HTTP Status Codes
+
+HTTP status codes are short messages sent by web servers to browsers, conveying outcomes of requests. They enable communication, error identification (e.g., "404 Not Found"), redirection ("301 Moved Permanently"), caching control ("304 Not Modified"), SEO and user experience improvement, debugging assistance, efficient server communication, and standardized response handling across the web.
+
+- Informational (1xx): These codes indicate that the server is continuing to process the request and hasn't completed it yet. They're usually used for communication purposes rather than indicating success or failure.
+
+- Successful (2xx): These codes indicate that the request was successfully received, understood, and accepted by the server. For example, "200 OK" signifies that the request was successful, and the requested information is included in the response.
+
+- Redirection (3xx): These codes indicate that further action needs to be taken to fulfill the request. They are often used for redirecting the client to a different location.
+
+- Client Errors (4xx): These codes indicate that the client's request has failed due to an error on the client's side. For instance, "404 Not Found" indicates that the requested resource could not be found on the server.
+
+- Server Errors (5xx): These codes indicate that the server failed to fulfill a valid request. They point to an issue on the server's side that prevented it from processing the request.
+
+#### Common HTTP Status Codes
+
+- 200 OK: The request was successful.
+
+- 201 Created: The request was successful, and a new resource was created.
+
+- 204 No Content: The request was successful, but there is no content to send in the response.
+
+- 301 Moved Permanently: The requested resource has been permanently moved to a new location.
+
+- 302 Found (Moved Temporarily): The requested resource has been temporarily moved to a different location.
+
+- 400 Bad Request: The request was malformed or contains invalid parameters.
+
+- 401 Unauthorized: Authentication is required and has failed or has not been provided.
+
+- 403 Forbidden: The server understood the request, but the server refuses to authorize it.
+
+- 404 Not Found: The requested resource was not found on the server.
+
+- 500 Internal Server Error: The server encountered an error while processing the request.
