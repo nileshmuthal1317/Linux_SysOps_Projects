@@ -105,3 +105,19 @@ Test the Apache configuration and restart Apache
 http://www.website1.com
 ```
 **Since this is a self-signed certificate, it's expected that a security warning will appear. You might see a padlock with an "x" over it or a triangle with an exclamation point. This simply indicates that the certificate cannot be validated. However, rest assured that your connection is still encrypted.**
+
+### Apache Modules
+
+Apache modules are like plugins for the Apache web server. They add extra features and abilities, such as handling secure connections, managing URLs, or improving performance. Modules are like building blocks that you can add or remove to tailor your web server's behavior to your website's needs.
+
+- `mod_rewrite` Use Case: Redirect URLs and rewrite paths.
+- `mod_ssl` Use Case: Enable HTTPS encryption.
+- `mod_proxy` Use Case: Proxy requests to backend servers.
+- `mod_auth_basic` Use Case: Implement basic HTTP authentication.
+- `mod_headers` Use Case: Modify HTTP headers.
+- `mod_expires` Use Case: Set content expiration dates.
+- `mod_deflate` Use Case: Compress web content for faster delivery.
+- `mod_security` Use Case: Protect against web attacks.
+- `mod_cgi` Use Case: Execute CGI scripts for dynamic content.
+- `mod_userdir` Use Case: Host user-specific content.
+
