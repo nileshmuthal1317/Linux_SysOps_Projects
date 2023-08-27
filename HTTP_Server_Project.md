@@ -106,6 +106,8 @@ http://www.website1.com
 ```
 **Since this is a self-signed certificate, it's expected that a security warning will appear. You might see a padlock with an "x" over it or a triangle with an exclamation point. This simply indicates that the certificate cannot be validated. However, rest assured that your connection is still encrypted.**
 
+### `.htaccess` vs `/etc/httpd/conf.d/domain_name.com`
+
 ### Apache Modules
 
 Apache modules are like plugins for the Apache web server. They add extra features and abilities, such as handling secure connections, managing URLs, or improving performance. Modules are like building blocks that you can add or remove to tailor your web server's behavior to your website's needs.
