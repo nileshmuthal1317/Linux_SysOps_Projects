@@ -16,7 +16,7 @@ This repository contains a curated list of projects focusing on various Linux se
 
 - **MySQL/MariaDB Database Management Project**
    - Description: Set up and manage a relational database system using MySQL or MariaDB.
-   - File: [`MySQL_MariaDB_Project.md`](MySQL_MariaDB_Project.md)
+   - File: [`MySQL_DB_Project.md`](MySQL_DB_Project.md)
 
 - **DNS (Domain Name System) Project**
    - Description: Implement a DNS service that resolves domain names to IP addresses and vice versa.
