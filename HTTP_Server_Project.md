@@ -106,28 +106,6 @@ http://www.website1.com
 ```
 **Since this is a self-signed certificate, it's expected that a security warning will appear. You might see a padlock with an "x" over it or a triangle with an exclamation point. This simply indicates that the certificate cannot be validated. However, rest assured that your connection is still encrypted.**
 
-### `.htaccess` 
-
-The .htaccess file is a distributed configuration file that allows you to modify the configuration for a specific directory, including all its subdirectories. It provides a way to override certain server configuration settings on a per-directory basis without requiring access to the main server configuration files. This can be particularly useful on shared hosting environments where users don't have direct access to the main server configuration.
-
-**Key points about .htaccess** 
-
-- It applies to a specific directory and its subdirectories.
-- It allows you to control various aspects of how your website works, including authentication, URL rewriting, and access control.
-- Changes made in .htaccess files are read and applied on each request, which can impact performance if not used judiciously.
-- `.htaccess` files should be used sparingly due to performance considerations, and it's recommended to use the main server configuration whenever possible.
-
-### `/etc/httpd/conf.d/domain_name.com`
-
-/etc/httpd/conf.d/domain_name.com:
-The /etc/httpd/conf.d/domain_name.com (or a similar path, depending on your system configuration) refers to a location where you can place custom configuration files for individual domains or virtual hosts on your server. These configuration files are typically included from the main Apache configuration and allow you to organize your settings in a modular way.
-
-**Key points about /etc/httpd/conf.d/domain_name.com**
-
-- It's used for creating custom configurations for specific domains or virtual hosts.
-- This approach is better suited for global configuration changes related to a particular domain.
-- Configuration changes here are generally applied at server startup or reload, so they don't have the performance overhead associated with .htaccess files.
-
 ### Apache Modules
 
 Apache modules are like plugins for the Apache web server. They add extra features and abilities, such as handling secure connections, managing URLs, or improving performance. Modules are like building blocks that you can add or remove to tailor your web server's behavior to your website's needs.
@@ -167,6 +145,29 @@ vim /etc/httpd/conf.d/website1.conf
 
 </VirtualHost>
 ```
+
+### `.htaccess` 
+
+The .htaccess file is a distributed configuration file that allows you to modify the configuration for a specific directory, including all its subdirectories. It provides a way to override certain server configuration settings on a per-directory basis without requiring access to the main server configuration files. This can be particularly useful on shared hosting environments where users don't have direct access to the main server configuration.
+
+**Key points about .htaccess** 
+
+- It applies to a specific directory and its subdirectories.
+- It allows you to control various aspects of how your website works, including authentication, URL rewriting, and access control.
+- Changes made in .htaccess files are read and applied on each request, which can impact performance if not used judiciously.
+- `.htaccess` files should be used sparingly due to performance considerations, and it's recommended to use the main server configuration whenever possible.
+
+### `/etc/httpd/conf.d/domain_name.com`
+
+/etc/httpd/conf.d/domain_name.com:
+The /etc/httpd/conf.d/domain_name.com (or a similar path, depending on your system configuration) refers to a location where you can place custom configuration files for individual domains or virtual hosts on your server. These configuration files are typically included from the main Apache configuration and allow you to organize your settings in a modular way.
+
+**Key points about /etc/httpd/conf.d/domain_name.com**
+
+- It's used for creating custom configurations for specific domains or virtual hosts.
+- This approach is better suited for global configuration changes related to a particular domain.
+- Configuration changes here are generally applied at server startup or reload, so they don't have the performance overhead associated with .htaccess files.
+
 ###  HTTP Status Codes
 
 HTTP status codes are short messages sent by web servers to browsers, conveying outcomes of requests. They enable communication, error identification (e.g., "404 Not Found"), redirection ("301 Moved Permanently"), caching control ("304 Not Modified"), SEO and user experience improvement, debugging assistance, efficient server communication, and standardized response handling across the web.
