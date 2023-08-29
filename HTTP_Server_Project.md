@@ -106,7 +106,7 @@ http://www.website1.com
 ```
 **Since this is a self-signed certificate, it's expected that a security warning will appear. You might see a padlock with an "x" over it or a triangle with an exclamation point. This simply indicates that the certificate cannot be validated. However, rest assured that your connection is still encrypted.**
 
-### `.htaccess` vs `/etc/httpd/conf.d/domain_name.com`
+### `.htaccess` 
 
 The .htaccess file is a distributed configuration file that allows you to modify the configuration for a specific directory, including all its subdirectories. It provides a way to override certain server configuration settings on a per-directory basis without requiring access to the main server configuration files. This can be particularly useful on shared hosting environments where users don't have direct access to the main server configuration.
 
@@ -116,6 +116,8 @@ The .htaccess file is a distributed configuration file that allows you to modify
 - It allows you to control various aspects of how your website works, including authentication, URL rewriting, and access control.
 - Changes made in .htaccess files are read and applied on each request, which can impact performance if not used judiciously.
 - `.htaccess` files should be used sparingly due to performance considerations, and it's recommended to use the main server configuration whenever possible.
+
+### `/etc/httpd/conf.d/domain_name.com`
 
 /etc/httpd/conf.d/domain_name.com:
 The /etc/httpd/conf.d/domain_name.com (or a similar path, depending on your system configuration) refers to a location where you can place custom configuration files for individual domains or virtual hosts on your server. These configuration files are typically included from the main Apache configuration and allow you to organize your settings in a modular way.
