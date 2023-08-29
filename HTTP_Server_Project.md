@@ -142,6 +142,31 @@ Apache modules are like plugins for the Apache web server. They add extra featur
 **-** `mod_cgi` Use Case: Execute CGI scripts for dynamic content.<br>
 **-** `mod_userdir` Use Case: Host user-specific content.
 
+### Logging and troubleshooting Apache on CentOS 8
+
+- `Access Log` This log records all requests made to the Apache server. The default access log file is named access_log. You can find it at `/var/log/httpd/access_log`
+- `Error Log` The error log records various errors encountered by the Apache server, including issues with configuration, server errors, and client errors. The default error log file is named error_log. You can find it at `/var/log/httpd/error_log`
+- `Virtual Hosts` If you have set up virtual hosts (multiple websites on a single server), each virtual host might have its own access and error log files named after the virtual host configuration. For example, if you have a virtual host named example.com, its access log might be `/var/log/httpd/example.com-access_log`
+<br>
+- We can set custom format for access logs
+- Also we can set the LogLevel to control the amount of detail that is logged in the error log.
+
+```
+vim /etc/httpd/conf.d/website1.conf
+
+<VirtualHost *:443>
+    ServerName www.website1.com
+    DocumentRoot /var/www/website1
+
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/apache-selfsigned-website1.crt
+    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned-website1.key
+
+    CustomLog /var/log/httpd/access.log
+    ErrorLog /var/log/httpd/error.log
+
+</VirtualHost>
+```
 ###  HTTP Status Codes
 
 HTTP status codes are short messages sent by web servers to browsers, conveying outcomes of requests. They enable communication, error identification (e.g., "404 Not Found"), redirection ("301 Moved Permanently"), caching control ("304 Not Modified"), SEO and user experience improvement, debugging assistance, efficient server communication, and standardized response handling across the web.
