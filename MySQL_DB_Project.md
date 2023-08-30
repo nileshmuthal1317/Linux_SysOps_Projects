@@ -26,23 +26,26 @@ mysql -u root -p
 ### Working with MySQL Databases
 Managing Databases and Tables
 ```
-CREATE DATABASE test_database; SHOW DATABASES;
+CREATE DATABASE test_database; 
+SHOW DATABASES;
 DROP DATABASE test_database;
 USE test_database;
 ```
 ```
 CREATE TABLE employees (id INT AUTO_INCREMENT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),age INT);
-INSERT INTO employees (first_name, last_name, age)VALUES('John', 'Doe', 30),('Jane', 'Smith', 25));
+INSERT INTO employees (first_name, last_name, age)VALUES('John', 'Doe', 30),('Jane', 'Smith', 25);
 SELECT * FROM employees;
-DESCRIBE table_name;
+DESCRIBE employees;
+SHOW TABLES;
 RENAME TABLE old_table_name TO new_table_name;
 DROP TABLE table_name;
 ```
 Managing Users and Permissions
 ```
-CREATE USER 'username'@'host' IDENTIFIED BY 'password';
-GRANT privileges ON database_name.table_name TO 'username'@'host';
+CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'Password@007';
+GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
 FLUSH PRIVILEGES;
+SELECT user, host FROM mysql.user;
 ```
 Backing Up and Restoring
 ```
