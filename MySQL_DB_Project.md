@@ -106,7 +106,7 @@ datadir = /var/lib/mysql
 ```
 Logging
 ```
-log-error = /var/log/mysql/error.log
+log-error = /var/log/mysql/error.logs
 general-log = 0
 general_log_file = /var/log/mysql/general.log
 slow_query_log = 1
