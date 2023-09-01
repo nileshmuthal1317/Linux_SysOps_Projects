@@ -60,11 +60,6 @@ SHOW PROCESSLIST;
 SHOW VARIABLES LIKE 'long_query_time';
 SHOW VARIABLES LIKE 'slow_query_log';
 ```
-General Maintenance
-```
-FLUSH QUERY CACHE;
-FLUSH LOGS;
-```
 ### Installing PHP
 ```
 yum install php php-cli php-json php-gd php-mbstring php-pdo php-xml php-mysqlnd
@@ -97,3 +92,34 @@ Alias /phpmyadmin /var/www/phpMyAdmin
 systemctl restart httpd
 ```
 Test `phpMyAdmin` by accessing it through the URL `http://server_IP_address/phpmyadmin`, and then log in using the credentials of the root user or a regular user.
+
+### MySQL Logging and Configuration
+
+**Configuration file `/etc/my.cnf` or `/etc/my.ini`**
+
+Database location and Character Set
+```
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+port = 3306
+datadir = /var/lib/mysql
+```
+Logging
+```
+log-error = /var/log/mysql/error.log
+general-log = 0
+general_log_file = /var/log/mysql/general.log
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+```
+Performance
+```
+query_cache_type = 0
+query_cache_size = 0
+max_connections = 100
+key_buffer_size = 64M
+max_allowed_packet = 16M
+```
+
+
