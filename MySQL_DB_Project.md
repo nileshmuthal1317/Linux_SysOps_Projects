@@ -95,24 +95,25 @@ Test `phpMyAdmin` by accessing it through the URL `http://server_IP_address/phpm
 
 ### MySQL Logging and Configuration
 
-Configuration:
+**Configuration**
 
-Performance Optimization: Configure MySQL settings to boost database performance and resource efficiency.
-Security: Set up authentication, access controls, and encryption to safeguard your data.
-Resource Management: Allocate system resources effectively to prevent bottlenecks.
-Character Set and Collation: Ensure proper handling of diverse text data for different languages.
-Replication and High Availability: Configure replication for data redundancy and failover.
-Storage Engine Selection: Choose the right storage engine based on your use case.
-Query Optimization: Fine-tune settings for faster query execution.
-Loggings:
+- Performance Optimization: Configure MySQL settings to boost database performance and resource efficiency.
+- Security: Set up authentication, access controls, and encryption to safeguard your data.
+- Resource Management: Allocate system resources effectively to prevent bottlenecks.
+- Character Set and Collation: Ensure proper handling of diverse text data for different languages.
+- Replication and High Availability: Configure replication for data redundancy and failover.
+- Storage Engine Selection: Choose the right storage engine based on your use case.
+- Query Optimization: Fine-tune settings for faster query execution.
 
-Troubleshooting: Logs help diagnose errors, identify problematic queries, and pinpoint slow performance.
-Security Auditing: Monitor and audit access, detecting unauthorized activity.
-Performance Analysis: Analyze logs to find performance bottlenecks and optimize queries.
-Capacity Planning: Monitor resource utilization for effective capacity planning.
-Compliance and Regulations: Maintain logs to meet industry compliance requirements.
-Replication Monitoring: Logs track replication status, ensuring data consistency.
-Backup Verification: Logs verify the integrity of database backups.
+**Loggings**
+
+- Troubleshooting: Logs help diagnose errors, identify problematic queries, and pinpoint slow performance.
+- Security Auditing: Monitor and audit access, detecting unauthorized activity.
+- Performance Analysis: Analyze logs to find performance bottlenecks and optimize queries.
+- Capacity Planning: Monitor resource utilization for effective capacity planning.
+- Compliance and Regulations: Maintain logs to meet industry compliance requirements.
+- Replication Monitoring: Logs track replication status, ensuring data consistency.
+- Backup Verification: Logs verify the integrity of database backups.
 
 **Configuration file `/etc/my.cnf` or `/etc/my.ini`**
 
