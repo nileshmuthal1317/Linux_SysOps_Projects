@@ -43,9 +43,10 @@ DROP TABLE table_name;
 Managing Users and Permissions
 ```
 CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'Password@007';
+SELECT user, host FROM mysql.user;
 GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
 FLUSH PRIVILEGES;
-SELECT user, host FROM mysql.user;
+SHOW GRANTS FOR 'myuser'@'localhost';
 ```
 Backing Up and Restoring
 ```
