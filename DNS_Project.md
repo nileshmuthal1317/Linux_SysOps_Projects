@@ -91,6 +91,7 @@ website1.linux.server.com.      IN      A       192.168.128.129
 website2.linux.server.com.      IN      A       192.168.128.129
 ```
 Edit `/etc/named/zones/db.192.168`
+Make sure to update the serial number every time we update the zone files
 ```
 vim /etc/named/zones/db.192.168
 
