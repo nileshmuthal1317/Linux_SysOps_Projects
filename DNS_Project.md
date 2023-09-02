@@ -143,6 +143,7 @@ nslookup/dig website1.linux.server.com
 nslookup/dig website2.linux.server.com
 ping website1.linux.server.com
 telnet 192.168.128.129 53
+netstat -tulpn | grep 53
 ```
 ```
 --------------------------------------------------------------------------------
@@ -155,6 +156,8 @@ PING website1.linux.server.com (192.168.128.129) 56(84) bytes of data.
 64 bytes from linux.server.com (192.168.128.129): icmp_seq=2 ttl=63 time=1.43 ms
 --------------------------------------------------------------------------------
 telnet 192.168.128.129 53
+Trying 192.168.128.129...
+Connected to 192.168.128.129.
 --------------------------------------------------------------------------------
 ; <<>> DiG 9.18.12-0ubuntu0.22.04.2-Ubuntu <<>> linux.server.com.
 ;; global options: +cmd
@@ -185,6 +188,15 @@ Address:        172.25.160.1#53
 Name:   linux.server.com
 Address: 192.168.128.129
 --------------------------------------------------------------------------------
+netstat -tulpn | grep 53
+tcp        0      0 192.168.128.129:53      0.0.0.0:*               LISTEN      4719/named
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      4719/named
+tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      4719/named
+tcp6       0      0 :::53                   :::*                    LISTEN      4719/named
+tcp6       0      0 ::1:953                 :::*                    LISTEN      4719/named
+udp        0      0 192.168.128.129:53      0.0.0.0:*                           4719/named
+udp        0      0 127.0.0.1:53            0.0.0.0:*                           4719/named
+udp6       0      0 :::53                   :::*                                4719/named
 ```
 ### Configure Secondary DNS Server
 
