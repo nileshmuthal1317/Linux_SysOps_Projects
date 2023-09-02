@@ -231,7 +231,7 @@ zone "168.192.in-addr.arpa" {
 };
 ```
 
-**Perform the configuration check and testing steps as mentioned in previously**
+**Perform the configuration check and testing steps as mentioned previously**
 
 **No need to create the zone files on the slave server manually. The slave server is configured to automatically request and retrieve the zone data from the master server specified in the masters directive.**                                         
 
