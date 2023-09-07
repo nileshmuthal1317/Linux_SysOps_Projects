@@ -32,6 +32,8 @@ This repository contains a curated list of projects focusing on various Linux se
    - Description: Develop a server allowing the retrieval of email messages from a server.
    - File: [`IMAP_POP3_Project.md`](IMAP_POP3_Project.md)
 
+   <!--
+
 - **Nginx Proxy and Load Balancing Project**
    - Description: Utilize Nginx to act as a reverse proxy and distribute incoming traffic across multiple servers.
    - File: [`Nginx_Proxy_Load_Balancing_Project.md`](Nginx_Proxy_Load_Balancing_Project.md)
@@ -83,3 +85,5 @@ This repository contains a curated list of projects focusing on various Linux se
 - **Backup and Recovery Services Project**
    - Description: Develop a system for automating data backup and recovery processes.
    - File: [`Backup_Recovery_Services_Project.md`](Backup_Recovery_Services_Project.md)
+
+-->
