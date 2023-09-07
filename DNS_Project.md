@@ -230,7 +230,7 @@ Edit `/etc/named/named.conf.local`
 vim /etc/named/named.conf.local
 
 
-zone "nyc3.example.com" {
+zone "linux.server.com" {
     type slave;
     file "slaves/db.nyc3.example.com";
     masters { 192.168.128.129; };  # ns1 private IP
