@@ -245,7 +245,32 @@ zone "168.192.in-addr.arpa" {
 
 **Perform the configuration check and testing steps as mentioned previously**
 
-**No need to create the zone files on the slave server manually. The slave server is configured to automatically request and retrieve the zone data from the master server specified in the masters directive.**                                         
+**No need to create the zone files on the slave server manually. The slave server is configured to automatically request and retrieve the zone data from the master server specified in the masters directive.**
 
+**Configuring logging on a BIND DNS server** 
 
+- We can configure various logging option for different parameters of DNS servers.
+
+- The /var/log/named/named.log file in BIND9 typically contains information about DNS server startup, errors, and warnings, DNS query activity, and potentially security events and zone transfers. The specific content may vary depending on system configuration and BIND9 version. It serves as a valuable resource for monitoring and troubleshooting DNS-related issues.
+
+ Edit `/etc/named.conf`
+ ```
+logging {
+
+    channel default_log {
+        file "/var/log/named/named.log" versions 3 size 5m;
+        severity dynamic;
+     };
+        category default { default_log; };
+
+}; 
+ ```   
+ Create the log file Directory and update the permissions
+ ```                                
+mkdir  /var/log/named/
+chown named:named /var/named/log/
+named-checkconf
+systemctl restart named
+tail -f /var/log/named/named.log
+```
 
