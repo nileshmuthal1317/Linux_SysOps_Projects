@@ -247,7 +247,7 @@ zone "168.192.in-addr.arpa" {
 
 **No need to create the zone files on the slave server manually. The slave server is configured to automatically request and retrieve the zone data from the master server specified in the masters directive.**
 
-**Configuring logging on a BIND DNS server** 
+### Configuring logging on a BIND DNS server
 
 - We can configure various logging option for different parameters of DNS servers.
 
