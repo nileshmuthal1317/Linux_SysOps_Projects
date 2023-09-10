@@ -8,29 +8,25 @@ This repository contains a curated list of projects focusing on various Linux se
 
 ## Project List
 
-- **SSH (Secure Shell) Project**
+- **SSH Service Implementation**
    - Description: Explore the implementation of encrypted remote access and secure command-line execution.
    - File: [`SSH_Project.md`](SSH_Project.md)
 
-- **HTTP Server Project**
+- **HTTP Web Server Deployment**
    - Description: Create a web server to serve web content and handle HTTP requests.
    - File: [`HTTP_Server_Project.md`](HTTP_Server_Project.md)
 
-- **MySQL/MariaDB Database Management Project**
-   - Description: Set up and manage a relational database system using MySQL or MariaDB.
+- **MySQL/MariaDB Database Management**
+   - Description: Set up and manage a relational database system using MySQL.
    - File: [`MySQL_DB_Project.md`](MySQL_DB_Project.md)
 
-- **DNS (Domain Name System) Project**
+- **DNS (Domain Name System) Server Deployment**
    - Description: Implement a DNS service that resolves domain names to IP addresses and vice versa.
    - File: [`DNS_Project.md`](DNS_Project.md)
 
-- **SMTP (Simple Mail Transfer Protocol) Server Project**
-   - Description: Create a server for sending and receiving email messages using the SMTP protocol.
-   - File: [`SMTP_Server_Project.md`](SMTP_Server_Project.md)
-
-- **IMAP/POP3 Project**
-   - Description: Develop a server allowing the retrieval of email messages from a server.
-   - File: [`IMAP_POP3_Project.md`](IMAP_POP3_Project.md)
+- **EMAIL Server Implementation using Postfix and Dovecot**
+   - Description: Create a server for sending/receiving and retrieval of email messages using the Postfix and Dovecot Services.
+   - File: [`Email_Server.md`](Email_Server_Project.md)
 
    <!--
 
