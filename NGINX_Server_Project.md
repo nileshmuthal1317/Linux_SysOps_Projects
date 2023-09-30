@@ -123,4 +123,7 @@ private_key     = $dir/private/root.ca.key.pem
 
 - Install the "root.crt" certificate into the trusted root certificate authority store on your system. This step will depend on your operating system and configuration. Usually, you can do this by importing the certificate into the system's trusted certificate store.
 
+- Once you have installed the root CA, you can verify the certificate path section of the server's digital certificate. This will confirm that the server's certificate is signed by the trusted root CA, establishing the trust chain for secure communication.
+
 - Keep in mind that you might encounter non-secure warnings when using these certificates because they are self-signed certificates. This means they are not issued by a trusted third-party certificate authority. You may need to acknowledge or accept these warnings when using the certificates.
+
