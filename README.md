@@ -28,12 +28,11 @@ This repository contains a curated list of projects focusing on various Linux se
    - Description: Create a server for sending/receiving and retrieval of email messages using the Postfix and Dovecot Services.
    - File: [`Email_Server.md`](Email_Server_Project.md)
 
-   <!--
-
-- **Nginx Proxy and Load Balancing Project**
+- **Nginx Web Server Project**
    - Description: Utilize Nginx to act as a reverse proxy and distribute incoming traffic across multiple servers.
-   - File: [`Nginx_Proxy_Load_Balancing_Project.md`](Nginx_Proxy_Load_Balancing_Project.md)
+   - File: [`NGINX_Server_Project.md`](NGINX_Server_Project.md)
 
+<!--
 - **PHP, Python, Node.js, and Java Web Application Deployment Project**
    - Description: Deploy web applications built with these technologies, considering different hosting platforms and deployment strategies.
    - File: [`Web_App_Deployment_Project.md`](Web_App_Deployment_Project.md)
