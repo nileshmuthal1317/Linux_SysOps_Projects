@@ -24,10 +24,6 @@ This repository contains a curated list of projects focusing on various Linux se
    - Description: Implement a DNS service that resolves domain names to IP addresses and vice versa.
    - File: [`DNS_Project.md`](DNS_Project.md)
 
-- **EMAIL Server Implementation using Postfix and Dovecot**
-   - Description: Create a server for sending/receiving and retrieval of email messages using the Postfix and Dovecot Services.
-   - File: [`Email_Server.md`](Email_Server_Project.md)
-
 - **Nginx Web Server Project**
    - Description: Utilize Nginx to act as a reverse proxy and distribute incoming traffic across multiple servers.
    - File: [`NGINX_Server_Project.md`](NGINX_Server_Project.md)
