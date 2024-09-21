@@ -7,7 +7,7 @@
 ### Installing bind9 DNS Server
 
 ```bash
-**yum install bind bind-utils**
+yum install bind bind-utils
 ```
 
 ### Configuration of Primary DNS Server
@@ -15,33 +15,33 @@
 **Client, Server, Domains Information**
 
 ```bash
-**linux.server.com.               192.168.128.129;        # Primary Name Server
+linux.server.com.               192.168.128.129;        # Primary Name Server
 linuxslave.server.com.          192.168.128.131;        # Secondary DNS Server
 client                          192.168.128.130;        # Client
 client                          192.168.128.1;          # Client
 website1.linux.server.com       192.168.128.129         # Domain
 website2.linux.server.com       192.168.128.129         # Domain
-linux.server.com                192.168.128.129         # Domain**
+linux.server.com                192.168.128.129         # Domain
 
 ```
 
 **Edit `/etc/named.conf`**
 
 ```bash
-**vi /etc/named.conf
+vi /etc/named.conf
 
 listen-on port 53 { 127.0.0.1; 192.168.128.131; };
 allow-query     { localhost; 192.168.128.130; 192.168.128.1; 192.168.128.131; };
 include "/etc/named/named.conf.local";
 
-allow-transfer { 192.168.128.131; };**
+allow-transfer { 192.168.128.131; };
 
 ```
 
 **OR**
 
 ```bash
-**comment allow-query
+comment allow-query
 
 allow-query { trusted; };
 
@@ -50,20 +50,20 @@ acl "trusted" {
         192.168.128.131;        # Secondary DNS Server
         192.168.128.130;        # Client
         192.168.128.1;          # Client
-        }**
+        }
 ```
 
 ### Update permission and create the directory for forward and reverse lookup files
 
 ```bash
-**chmod 755 /etc/named
-mkdir /etc/named/zones**
+chmod 755 /etc/named
+mkdir /etc/named/zones
 ```
 
 **Edit `/etc/named/named.conf.local`**
 
 ```bash
-**vim /etc/named/named.conf.local
+vim /etc/named/named.conf.local
 
 zone "linux.server.com" {
         type master;
@@ -73,7 +73,7 @@ zone "linux.server.com" {
 zone "168.192.in-addr.arpa" {
         type master;
         file "/etc/named/zones/db.192.168";
-   };**
+   };
 ```
 
 ### Edit forward lookup and reverse lookup zone files
@@ -81,7 +81,7 @@ zone "168.192.in-addr.arpa" {
 **Edit `/etc/named/zones/db.linux.server.com`**
 
 ```bash
-**# Forward lookup file to convert Domain Name into IP Addresss
+# Forward lookup file to convert Domain Name into IP Addresss
 
 vim /etc/named/zones/db.linux.server.com
 
@@ -103,14 +103,14 @@ linuxslave.server.com.   IN      A       192.168.128.129
 
 ; host servers - A record
 website1.linux.server.com.      IN      A       192.168.128.129
-website2.linux.server.com.      IN      A       192.168.128.129**
+website2.linux.server.com.      IN      A       192.168.128.129
 ```
 
 **Edit `/etc/named/zones/db.192.168`**
 Make sure to update the serial number every time we update the zone files
 
 ```bash
-**vim /etc/named/zones/db.192.168
+vim /etc/named/zones/db.192.168
 
 $TTL    300
 @       IN      SOA     linux.server.com. admin.linux.server.com. (
@@ -127,50 +127,50 @@ $TTL    300
 ; PTR Records
 129.128  IN      PTR     linux.server.com.
 129.128  IN      PTR     website1.linux.server.com.
-129.128  IN      PTR     website2.linux.server.com.**
+129.128  IN      PTR     website2.linux.server.com.
 ```
 
 ### Firewall Settings
 
 ```bash
-**firewall-cmd --permanent --add-port=53/udp
+firewall-cmd --permanent --add-port=53/udp
 firewall-cmd --permanent --add-port=53/tcp
 firewall-cmd --permanent --add-service=dns
-firewall-cmd --reload; firewall-cmd --list-all**
+firewall-cmd --reload; firewall-cmd --list-all
 ```
 
 ### Check Configurations
 
 ```bash
-**named-checkconf
+named-checkconf
 named-checkzone linux.server.com /etc/named/zones/db.linux.server.com
 named-checkzone 168.192.in-addr.arpa /etc/named/zones/db.192.168
-systemctl restart named; systemctl enable named; systemctl status named**
+systemctl restart named; systemctl enable named; systemctl status named
 ```
 
 ### Client Configurations
 
 ```bash
-**vi /etc/resolv.conf
+vi /etc/resolv.conf
 
 search server.linux.com  # your private domain
 nameserver 192.168.128.129  # Primary DNS Server
-nameserver 192.168.128.131  # Secondary DNS Server**
+nameserver 192.168.128.131  # Secondary DNS Server
 ```
 
 ### Test DNS server
 
 ```bash
-**nslookup/dig linux.server.com
+nslookup/dig linux.server.com
 nslookup/dig website1.linux.server.com
 nslookup/dig website2.linux.server.com
 ping website1.linux.server.com
 telnet 192.168.128.129 53
-netstat -tulpn | grep 53**
+netstat -tulpn | grep 53
 ```
 
 ```bash
-**--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 129.128.168.192.in-addr.arpa    name = linux.server.com.
 129.128.168.192.in-addr.arpa    name = website1.linux.server.com.
 129.128.168.192.in-addr.arpa    name = website2.linux.server.com.
@@ -220,7 +220,7 @@ tcp6       0      0 :::53                   :::*                    LISTEN      
 tcp6       0      0 ::1:953                 :::*                    LISTEN      4719/named
 udp        0      0 192.168.128.129:53      0.0.0.0:*                           4719/named
 udp        0      0 127.0.0.1:53            0.0.0.0:*                           4719/named
-udp6       0      0 :::53                   :::*                                4719/named**
+udp6       0      0 :::53                   :::*                                4719/named
 ```
 
 ### Configure Secondary DNS Server
@@ -228,19 +228,19 @@ udp6       0      0 :::53                   :::*                                
 **Edit `/etc/named.conf`**
 
 ```bash
-**vi /etc/named.conf
+vi /etc/named.conf
 
 listen-on port 53 { 127.0.0.1; 192.168.128.131; };
 allow-query     { localhost; 192.168.128.130; 192.168.128.1; 192.168.128.131; };
 include "/etc/named/named.conf.local";
 
-allow-transfer { 192.168.128.131; };**
+allow-transfer { 192.168.128.131; };
 ```
 
 **OR**
 
 ```bash
-**comment allow-query
+comment allow-query
 
 allow-query { trusted; };
 
@@ -256,7 +256,7 @@ acl "trusted" {
 
 ```bash
 
-**vim /etc/named/named.conf.local
+vim /etc/named/named.conf.local
 
 zone "linux.server.com" {
     type slave;
@@ -268,7 +268,7 @@ zone "168.192.in-addr.arpa" {
     type slave;
     file "slaves/db.192.168";
     masters { 192.168.128.129; };  # ns1 private IP
-};**
+};
 ```
 
 **Perform the configuration check and testing steps as mentioned previously**
@@ -283,7 +283,7 @@ zone "168.192.in-addr.arpa" {
 **Edit `/etc/named.conf`**
 
 ```bash
-**logging {
+logging {
 
    channel default_log {
        file "/var/log/named/named.log" versions 3 size 5m;
@@ -291,15 +291,15 @@ zone "168.192.in-addr.arpa" {
     };
        category default { default_log; };
 
-};**
+};
 ```
 
 **Create the log file Directory and update the permissions**
 
 ```bash
-**mkdir  /var/log/named/
+mkdir  /var/log/named/
 chown named:named /var/named/log/
 named-checkconf
 systemctl restart named
-tail -f /var/log/named/named.log**
+tail -f /var/log/named/named.log
 ```
