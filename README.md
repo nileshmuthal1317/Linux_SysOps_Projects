@@ -1,4 +1,4 @@
-# Linux SysOps Project Documentation
+# Linux SysOps Project
 
 **This Repository is Under Developemet**
 
