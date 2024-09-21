@@ -127,7 +127,7 @@ In essence, the private key is like the secret key to your lock, and the public 
 **Edit /etc/nginx/nginx.conf**
 
 ```bash
-**server {
+server {
     listen 443 ssl;  # Listen on port 443 for SSL
     server_name example.net;  # Domain name for the server
     root /var/www/example.net/;  # Root directory for the website
@@ -137,7 +137,7 @@ In essence, the private key is like the secret key to your lock, and the public 
 
     access_log /var/log/nginx/example.net/access.log;  # Log file for access logs
     error_log /var/log/nginx/example.net/error.log;  # Log file for error logs
-}**
+}
 ```
 
 **Edit /etc/ssl/openssl.cnf**
