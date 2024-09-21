@@ -66,7 +66,7 @@ systemctl restart httpd; apachectl configtest
 - For Linux `/etc/hosts`
 
 ```bash
-<Server_IP_Address> <The website name should correspond to the configuration in the virtual host's conf file.>
+# <Server_IP_Address> <The website name should correspond to the configuration in the virtual host's conf file.>
 
 192.168.128.129 www.website1.com
 192.168.128.129 www.website2.com
