@@ -7,11 +7,11 @@
 ### Installing MySQL
 
 ```bash
-**yum install mysql-server;**
+yum install mysql-server;
 ```
 
 ```bash
-**systemctl start mysqld.service; systemctl enable mysqld.service; systemctl status mysqld**
+systemctl start mysqld.service; systemctl enable mysqld.service; systemctl status mysqld
 ```
 
 ### Securing MySQL
@@ -19,7 +19,7 @@
 Utilize the following command to configure security credentials for the root account.
 
 ```bash
-**mysql_secure_installation**
+mysql_secure_installation
 ```
 
 ### Testing MySQL
@@ -27,13 +27,13 @@ Utilize the following command to configure security credentials for the root acc
 You can verify your installation and retrieve information about it by connecting using the `mysqladmin` tool.
 
 ```bash
- **mysqladmin -u root -p version**
+ mysqladmin -u root -p version
 ```
 
 **Establish a connection to MySQL**
 
 ```bash
-**mysql -u root -p**
+mysql -u root -p
 ```
 
 ### Working with MySQL Databases
@@ -41,85 +41,85 @@ You can verify your installation and retrieve information about it by connecting
 **Managing Databases and Tables**
 
 ```bash
-**CREATE DATABASE test_database;
+CREATE DATABASE test_database;
 SHOW DATABASES;
 DROP DATABASE test_database;
-USE test_database;**
+USE test_database;
 ```
 
 ```bash
-**CREATE TABLE employees (id INT AUTO_INCREMENT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),age INT);
+CREATE TABLE employees (id INT AUTO_INCREMENT PRIMARY KEY,first_name VARCHAR(50),last_name VARCHAR(50),age INT);
 INSERT INTO employees (first_name, last_name, age)VALUES('John', 'Doe', 30),('Jane', 'Smith', 25);
 SELECT * FROM employees;
 DESCRIBE employees;
 SHOW TABLES;
 RENAME TABLE old_table_name TO new_table_name;
-DROP TABLE table_name;**
+DROP TABLE table_name;
 ```
 
 **Managing Users and Permissions**
 
 ```bash
-**CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'Password@007';
+CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'Password@007';
 SELECT user, host FROM mysql.user;
 GRANT ALL PRIVILEGES ON mydatabase.* TO 'myuser'@'localhost';
 FLUSH PRIVILEGES;
-SHOW GRANTS FOR 'myuser'@'localhost';**
+SHOW GRANTS FOR 'myuser'@'localhost';
 ```
 
 **Backing Up and Restoring**
 
 ```bash
-**mysqldump -u username -p database_name > backup.sql
-mysql -u username -p database_name < backup.sql**
+mysqldump -u username -p database_name > backup.sql
+mysql -u username -p database_name < backup.sql
 ```
 
 **Monitoring and Diagnostics**
 
 ```bash
-**SHOW STATUS;
+SHOW STATUS;
 SHOW PROCESSLIST;
 SHOW VARIABLES LIKE 'long_query_time';
-SHOW VARIABLES LIKE 'slow_query_log';**
+SHOW VARIABLES LIKE 'slow_query_log';
 ```
 
 ### Installing PHP
 
 ```bash
-**yum install php php-cli php-json php-gd php-mbstring php-pdo php-xml php-mysqlnd
+yum install php php-cli php-json php-gd php-mbstring php-pdo php-xml php-mysqlnd
 
 systemctl restart httpd
 
 vim /var/www/html/info.php
 
 <?php
-phpinfo();**
+phpinfo();
 ```
 
 ### Install phpMyAdmin
 
 ```bash
-**cd /var/www/
+cd /var/www/
 wget <https://files.phpmyadmin.net/phpMyAdmin/5.0.0/phpMyAdmin-5.0.0-all-languages.zip>
 unzip phpMyAdmin-5.0.0-all-languages.zip; rm phpMyAdmin-5.0.0-all-languages.zip
-mv phpMyAdmin-5.0.0-all-languages phpMyAdmin**
+mv phpMyAdmin-5.0.0-all-languages phpMyAdmin
 
 ```
 
 ```bash
-**chown -Rf apache:apache /var/www/phpMyAdmin
+chown -Rf apache:apache /var/www/phpMyAdmin
 semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/phpMyAdmin(/.*)?"
-restorecon -Rv /var/www/phpMyAdmin**
+restorecon -Rv /var/www/phpMyAdmin
 ```
 
 ```bash
-**vim /etc/httpd/conf.d/phpmyadmin.conf
+vim /etc/httpd/conf.d/phpmyadmin.conf
 
-Alias /phpmyadmin /var/www/phpMyAdmin**
+Alias /phpmyadmin /var/www/phpMyAdmin
 ```
 
-```
-**systemctl restart httpd**
+```bash
+systemctl restart httpd
 ```
 
 Test `phpMyAdmin` by accessing it through the URL `http://server_IP_address/phpmyadmin`, and then log in using the credentials of the root user or a regular user.
@@ -160,20 +160,20 @@ datadir = /var/lib/mysql**
 **Logging**
 
 ```bash
-**log-error = /var/log/mysql/error.log
+log-error = /var/log/mysql/error.log
 general-log = 0
 general_log_file = /var/log/mysql/general.log
 slow_query_log = 1
 slow_query_log_file = /var/log/mysql/slow.log
-long_query_time = 2**
+long_query_time = 2
 ```
 
 **Performance**
 
 ```bash
-**query_cache_type = 0
+query_cache_type = 0
 query_cache_size = 0
 max_connections = 100
 key_buffer_size = 64M
-max_allowed_packet = 16M**
+max_allowed_packet = 16M
 ```
