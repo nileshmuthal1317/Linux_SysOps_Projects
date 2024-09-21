@@ -7,30 +7,30 @@
 **Server Side: Install SSH Server**
 
 ```bash
-**yum install openssh-server; systemctl restart ssh; systemctl enable sshd**
+yum install openssh-server; systemctl restart ssh; systemctl enable sshd
 ```
 
 **Ensure Firewall for Port or Service and Add Rule if Not Permitted**
 
 ```bash
-**firewall-cmd --list-all | grep -e "ports" -e "services"**
+firewall-cmd --list-all | grep -e "ports" -e "services"
 ```
 
 ```bash
-**sudo firewall-cmd --add-service=ssh --permanent; sudo firewall-cmd --reload**
+sudo firewall-cmd --add-service=ssh --permanent; sudo firewall-cmd --reload
 ```
 
 Client Side: Install SSH Client
 
 ```bash
-**yum install openssh-client;**
+yum install openssh-client;
 ```
 
 Accessing the server
 
 ```bash
-**ssh username@remote_host
-ssh -p port_number username@remote_host**
+ssh username@remote_host
+ssh -p port_number username@remote_host
 ```
 
 ### Configuration for Passwordless (Key-Based) Authentication.
@@ -38,8 +38,8 @@ ssh -p port_number username@remote_host**
 An SSH key pair can be generated or found in the ~/.ssh/ directory.
 
 ```bash
-**Private Key Location: ~/.ssh/id_rsa
-Public Key Location: ~/.ssh/id_rsa.pub**
+Private Key Location: ~/.ssh/id_rsa
+Public Key Location: ~/.ssh/id_rsa.pub
 ```
 
 **Manual Server Side Method**
@@ -54,19 +54,19 @@ Public Key Location: ~/.ssh/id_rsa.pub**
 **Generate an SSH key pair on your local machine**
 
 ```bash
-**ssh-keygen**
+ssh-keygen
 ```
 
 **Copy your public key to the remote server for authentication**
 
 ```bash
-**ssh-copy-id username@remote_host**
+ssh-copy-id username@remote_host
 ```
 
 **Executing Commands Remotely**
 
 ```bash
-**ssh username@remote_host command**
+ssh username@remote_host command
 ```
 
 ### Common configuration options in `/etc/ssh/ssh_config`.
