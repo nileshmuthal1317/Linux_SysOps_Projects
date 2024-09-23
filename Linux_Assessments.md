@@ -5,7 +5,7 @@
 **Create the following users and group memberships:**
 
 ```bash
-**[root@L2-Linux-131 student]# groupadd linux
+[root@L2-Linux-131 student]# groupadd linux
 [root@L2-Linux-131 student]# useradd -G linux redhat
 [root@L2-Linux-131 student]# useradd -G linux suse
 [root@L2-Linux-131 student]# useradd -s /usr/bin/nologin debian
@@ -34,13 +34,13 @@ passwd: all authentication tokens updated successfully.
 Wed Oct 18 14:15:27 GMT 2023
 redhat:x:1001:1002::/home/redhat:/bin/bash
 suse:x:1002:1003::/home/suse:/bin/bash
-debian:x:1003:1004::/home/debian:/usr/bin/nologin**
+debian:x:1003:1004::/home/debian:/usr/bin/nologin
 ```
 
 **Create a colloborative directory "/common/share".**
 
 ```bash
-**[root@L2-Linux-131 student]# mkdir -p /common/share
+[root@L2-Linux-131 student]# mkdir -p /common/share
 [root@L2-Linux-131 student]# chown :linux /common/share
 [root@L2-Linux-131 student]# chmod 700 /common/share
 [root@L2-Linux-131 student]# chmod 770 /common/share
@@ -50,13 +50,13 @@ debian:x:1003:1004::/home/debian:/usr/bin/nologin**
 /common
 [root@L2-Linux-131 common]# ls -l
 total 0
-drwxrws---. 2 root linux 6 Oct 18 14:20 share**
+drwxrws---. 2 root linux 6 Oct 18 14:20 share
 ```
 
 **Locate the files (only file, not directory) which are greater than 20MB in size and redirect the output to a file /root/find. Size.**
 
 ```bash
-**[root@L2-Linux-131 common]# find / -type f -size +20M -exec ls -lrth {} \; >
+[root@L2-Linux-131 common]# find / -type f -size +20M -exec ls -lrth {} \; >
 /root/find.size
 [root@L2-Linux-131 common]# head /root/find.size
 -rw-------. 1 root root 51M Jan 5 2023 /boot/initramfs-4.18.0-408.el8.x86_64.img
@@ -74,26 +74,26 @@ filelists.xml.gz
 -rw-r--r--. 1 root root 109M Jan 5 2023 /var/cache/PackageKit/8/metadata/appstream-8-
 x86_64/packages/firefox-102.4.0-1.el8.x86_64.rpm
 -rw-r--r--. 1 root root 56M Jan 5 2023 /var/cache/PackageKit/8/metadata/appstream-8-
-x86_64/packages/llvm-compat-libs-14.0.6-1.module_el8.8.0+1224+64629835.x86_64.rpm**
+x86_64/packages/llvm-compat-libs-14.0.6-1.module_el8.8.0+1224+64629835.x86_64.rpm
 ```
 
 **Create Native Linux Partition:**
 
 ```bash
-**[root@L2-Linux-131 common]# df -PTh | grep vfatdata
+[root@L2-Linux-131 common]# df -PTh | grep vfatdata
 /dev/sdb2 vfat 2.0G 616K 2.0G 1% /vfatdata
 [root@L2-Linux-131 common]# ll /vfatdata/
 total 612
 -rwxr-xr-x. 1 root root 626050 Oct 18 15:02 messages
 [root@L2-Linux-131 common]#
 [root@L2-Linux-131 common]# cat /etc/fstab | grep vfatdata
-/dev/sdb2 /vfatdata vfat defaults 0 0**
+/dev/sdb2 /vfatdata vfat defaults 0 0
 ```
 
 **Create LV:**
 
 ```bash
-**[root@L2-Linux-131 student]# pvs
+[root@L2-Linux-131 student]# pvs
 PV VG Fmt Attr PSize PFree
 /dev/sda3 cs lvm2 a-- 78.41g 0
 /dev/sdb1 wcvg lvm2 a-- <5.00g 4.68g
@@ -110,13 +110,13 @@ wclv wcvg -wi-ao---- 320.00m
 [root@L2-Linux-131 student]# ll /worldcup2023/
 total 123954
 drwx------. 2 root root 12288 Oct 18 17:03 lost+found
--rw-r--r--. 1 root root 126914560 Oct 18 17:05 Packages**
+-rw-r--r--. 1 root root 126914560 Oct 18 17:05 Packages
 ```
 
 **Install "mariadb" package.**
 
 ```bash
-**[root@L2-Linux-131 student]# rpm -qa | grep mariadb
+[root@L2-Linux-131 student]# rpm -qa | grep mariadb
 mariadb-common-10.3.28-1.module_el8.3.0+757+d382997d.x86_64
 mariadb-10.3.28-1.module_el8.3.0+757+d382997d.x86_64
 mariadb-connector-c-config-3.1.11-2.el8_3.noarch
@@ -134,22 +134,22 @@ Total number of docs: 13
 [root@L2-Linux-131 student]# cat /var/db-details
 Total number of files: 48
 Total number of docs: 13
-Total number of configs: 1**
+Total number of configs: 1
 ```
 
 **Find total number of folders (only folders) in /var folder and save it in A file /root/var_folders. The contents should be having the total number of folders in /var folder is xxx.**
 
 ```bash
-**[root@L2-Linux-131 student]# echo "The total number of folders in /var folder is $(find
+[root@L2-Linux-131 student]# echo "The total number of folders in /var folder is $(find
 /var -type d | wc -l)" > /root/var_folders
 [root@L2-Linux-131 student]# cat /root/var_folders
-The total number of folders in /var folder is 904**
+The total number of folders in /var folder is 904
 ```
 
 **Create a script named "/root/disp-msg.sh" so that it should print the Below message 10 times while executing.**
 
 ```bash
-**[root@L2-Linux-131 student]# ll /root/disp-msg.sh
+[root@L2-Linux-131 student]# ll /root/disp-msg.sh
 -rwxr-xr-x. 1 root root 101 Oct 18 17:39 /root/disp-msg.sh
 [root@L2-Linux-131 student]# cat /root/disp-msg.sh
 #!bin/bash
@@ -174,25 +174,25 @@ Happy 2023 WorldCup!!!
 Happy 2023 WorldCup!!!
 Happy 2023 WorldCup!!!
 Happy 2023 WorldCup!!!
-[root@L2-Linux-131 ~]#**
+[root@L2-Linux-131 ~]#
 ```
 
 **Create a user with the below requirements:**
 
 ```bash
-**[root@L2-Linux-131 ~]# useradd -u 2023 -c "Cricket Players" -m -d /mnt/wcindia -s
+[root@L2-Linux-131 ~]# useradd -u 2023 -c "Cricket Players" -m -d /mnt/wcindia -s
 /bin/bash wcindia
 [root@L2-Linux-131 ~]# cat /etc/passwd | grep wcindia
 wcindia:x:2023:2023:Cricket Players:/mnt/wcindia:/bin/bash
 [root@L2-Linux-131 ~]# usermod -a -G linux,batnball wcindia
 [root@L2-Linux-131 ~]# groups wcindia
-wcindia : wcindia linux batnball**
+wcindia : wcindia linux batnball
 ```
 
 **Create a Linux native filesystem:**
 
 ```bash
-**[root@L2-Linux-131 ~]# fdisk -l /dev/sdb
+[root@L2-Linux-131 ~]# fdisk -l /dev/sdb
 Disk /dev/sdb: 20 GiB, 21474836480 bytes, 41943040 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -224,7 +224,7 @@ fi
 [root@L2-Linux-131 student]# uptime
 19:05:47 up 1 min, 2 users, load average: 1.14, 0.52, 0.19
 [root@L2-Linux-131 student]# date
-Wed Oct 18 19:05:49 GMT 2023**
+Wed Oct 18 19:05:49 GMT 2023
 ```
 
 # Assessment Two
@@ -233,7 +233,7 @@ Wed Oct 18 19:05:49 GMT 2023**
 (hint: folder named "dict" is available on your vm)**
 
 ```bash
-**[root@L2-Linux-131 ~]# grep '^mang' /usr/share/dict/words > /root/dictwords
+[root@L2-Linux-131 ~]# grep '^mang' /usr/share/dict/words > /root/dictwords
 [root@L2-Linux-131 ~]# head /root/dictwords
 mang
 manga
@@ -244,13 +244,13 @@ mangabeys
 mangabies
 mangaby
 mangal
-mangan**
+mangan
 ```
 
 **Create users and groups as per the below requirements:**
 
 ```bash
-**[root@L2-Linux-131 ~]# groupadd -g 3010 sfgroup
+[root@L2-Linux-131 ~]# groupadd -g 3010 sfgroup
 [root@L2-Linux-131 ~]# useradd -m -G sfgroup sfprod1
 [root@L2-Linux-131 ~]# useradd -m -G sfgroup sfprod2
 [root@L2-Linux-131 ~]# useradd -m -G sfgroup sfprod3
@@ -261,24 +261,24 @@ sfprod1:x:2024:2024::/home/sfprod1:/bin/bash
 sfprod2:x:2025:2025::/home/sfprod2:/bin/bash
 sfprod3:x:2026:2026::/home/sfprod3:/bin/bash
 sfprod4:x:2027:100::/home/sfprod4:/sbin/nologin
-sfvendor:x:2028:100::/home/sfvendor:/bin/bash**
+sfvendor:x:2028:100::/home/sfvendor:/bin/bash
 ```
 
 **Create a project folder which should meet out the below requirements:**
 
 ```bash
-**[root@L2-Linux-131 ~]# mkdir /sfprojest
+[root@L2-Linux-131 ~]# mkdir /sfprojest
 [root@L2-Linux-131 ~]# chown sfprod1:sfgroup /sfprojest
 [root@L2-Linux-131 ~]# chmod 770 /sfprojest
 [root@L2-Linux-131 ~]# chmod g+s /sfprojest
 [root@L2-Linux-131 /]# ll | grep sfprojest
-drwxrws---. 2 sfprod1 sfgroup 6 Oct 18 19:31 sfprojest**
+drwxrws---. 2 sfprod1 sfgroup 6 Oct 18 19:31 sfprojest
 ```
 
 **The user "sfvendor" should be able to navigate inside /sfproject folder and able to create files and folders.**
 
 ```bash
-**[root@L2-Linux-131 /]# setfacl -m u:sfvendor:rwx /sfprojest
+[root@L2-Linux-131 /]# setfacl -m u:sfvendor:rwx /sfprojest
 [root@L2-Linux-131 /]# getfacl /sfprojest/
 getfacl: Removing leading '/' from absolute path names
 file: sfprojest/
@@ -288,24 +288,24 @@ flags: -suser::rwx
 user:sfvendor:rwx
 group::rwx
 mask::rwx
-other::---**
+other::---
 ```
 
 **Note: Disk of 20G (with standard HDD) should be attached to your VM.**
 
 ```bash
-**[root@L2-Linux-131 /]# df -PTh | grep sfnative
+[root@L2-Linux-131 /]# df -PTh | grep sfnative
 /dev/sdb3 ext3 2.0G 368K 1.9G 1% /sfnative
 [root@L2-Linux-131 /]# ll /sfnative/
 total 292
 drwx------. 2 root root 16384 Oct 18 19:43 lost+found
--rw-------. 1 root root 275778 Oct 18 19:44 messages**
+-rw-------. 1 root root 275778 Oct 18 19:44 messages
 ```
 
 **Create a lv named "sflv1" with a size of 40PE where the size of each PE should be 16MiB**
 
 ```bash
-**root@L2-Linux-131 /]# lvs
+root@L2-Linux-131 /]# lvs
 LV VG Attr LSize Pool Origin Data% Meta% Move Log Cpy%Sync Convert
 home cs -wi-ao---- 23.13g
 root cs -wi-ao---- 47.38g
@@ -316,13 +316,13 @@ wclv wcvg -wi-a----- 320.00m
 /dev/mapper/wcvg-sflv1 xfs 635M 158M 477M 25% /sflvdata
 [root@L2-Linux-131 /]# ll /sflvdata/
 total 124064
--rw-r--r--. 1 root root 127041536 Oct 18 19:52 Packages**
+-rw-r--r--. 1 root root 127041536 Oct 18 19:52 Packages
 ```
 
 **The FS /sfexistlv needs to be reduced to 1500M without any data loss.**
 
 ```bash
-**[root@L2-Linux-131 /]# lvs
+[root@L2-Linux-131 /]# lvs
 LV VG Attr LSize Pool Origin Data% Meta% Move Log Cpy%Sync Convert
 home cs -wi-ao---- 23.13g
 root cs -wi-ao---- 47.38g
@@ -347,23 +347,23 @@ Resizing the filesystem on /dev/wcvg/sfexistlv to 384000 (4k) blocks.
 The filesystem on /dev/wcvg/sfexistlv is now 384000 (4k) blocks long.
 [root@L2-Linux-131 /]# mount /dev/wcvg/sfexistlv /sfexistlv
 [root@L2-Linux-131 /]# df -kh | grep sfexistlv
-/dev/mapper/wcvg-sfexistlv 1.4G 24K 1.3G 1% /sfexistlv**
+/dev/mapper/wcvg-sfexistlv 1.4G 24K 1.3G 1% /sfexistlv
 ```
 
 **Find total number of files (only files) in /etc. folder and save it in a file /root/etc_files. The contents should be having the total number of files in /etc folder is xxx**
 
 ```bash
-**[root@L2-Linux-131 /]# echo "The total number of files in /etc folder is $(find /etc -
+[root@L2-Linux-131 /]# echo "The total number of files in /etc folder is $(find /etc -
 type f | wc -l)" > /root/etc_files
 [root@L2-Linux-131 /]# cat /root/etc_files
 The total number of files in /etc folder is 1307
 9. Create a Monitoring script such that, it has to monitor the /sfnative FS:
 [root@L2-Linux-131 /]# ll /root/monitoring_script.sh
--rwxr-xr-x. 1 root root 608 Oct 18 20:49 /root/monitoring_script.sh**
+-rwxr-xr-x. 1 root root 608 Oct 18 20:49 /root/monitoring_script.sh
 ```
 
 ```bash
-**[root@L2-Linux-131 /]# cat /root/monitoring_script.sh
+[root@L2-Linux-131 /]# cat /root/monitoring_script.sh
 #!/usr/bin/bash
 DISK_THRESHOLD=70
 EMAIL_RECIPIENT="root@localhost"
@@ -377,25 +377,25 @@ echo "High Disk Space Usage: /sfnative is at $DISK_USAGE%" | mailx -s "High
 Disk Space Utilization" "EMAIL_RECIPIENT"
 fi
 sleep 300
-done**
+done
 ```
 
 ```bash
-**[root@L2-Linux-131 /]# crontab -l
+[root@L2-Linux-131 /]# crontab -l
 */20 * * * * /usr/local/bin/disp-msg.sh
 */2 * * * * /root/nativefs_fs_alerting.sh
-*/5 * * * * /root/monitoring_script.sh**
+*/5 * * * * /root/monitoring_script.sh
 ```
 
 L**ogin as the user sfprod1, trigger CPU stress (hint: using stress command) Using script top.sh**
 
 ```bash
-**[root@L2-Linux-131 /]# ll /root/top.sh
--rwxr-xr-x. 1 root root 514 Oct 18 21:17 /root/top.sh**
+[root@L2-Linux-131 /]# ll /root/top.sh
+-rwxr-xr-x. 1 root root 514 Oct 18 21:17 /root/top.sh
 ```
 
 ```bash
-**#!/usr/bin/bash
+#!/usr/bin/bash
 user_to_monitor="sfprod1"
 threshold=50
 while true; do
@@ -409,5 +409,5 @@ $cpu_utilization%."
 echo "$message" | mailx -s "$subject" root@localhost
 fi
 sleep 60
-done**
+done
 ```
