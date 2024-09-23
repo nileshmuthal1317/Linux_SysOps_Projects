@@ -29,7 +29,7 @@ This repository contains a collection of projects focused on various Linux servi
    - **File**: [`OpenSSL.md`](OpenSSL.md)
 
 - **Nginx Web Server Deployment**
-   - **Description**: Deploy and configure Nginx as a reverse proxy to balance incoming traffic across multiple servers.
+   - **Description**: Set up an Nginx web server to serve web content and handle HTTP requests efficiently.
    - **File**: [`Nginx_Web_Server.md`](Nginx_Web_Server.md)
 
 - **Storage Management on Linux**
