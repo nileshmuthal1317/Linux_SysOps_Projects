@@ -9,8 +9,8 @@ This repository contains a collection of projects focused on various Linux servi
 ## Project List
 
 - **SSH Service Implementation**
-  ● **Description**: Learn how to implement secure remote access via SSH, enabling encrypted command-line communication.
-  ● **File**: [`SSH_Service.md`](SSH_Service.md)
+  - **Description**: Learn how to implement secure remote access via SSH, enabling encrypted command-line communication.
+  - **File**: [`SSH_Service.md`](SSH_Service.md)
 
 - **Apache Web Server Deployment**
    - **Description**: Set up an Apache web server to serve web content and handle HTTP requests efficiently.
