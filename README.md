@@ -34,7 +34,7 @@ This repository contains a collection of projects focused on various Linux servi
 
 - **Storage Management on Linux**
    - **Description**: Learn how to manage storage solutions in Linux, including standard, SWAP, and LVM configurations.
-   - **File**: [**Storage Management on Linux**](Linux_SysOps_Projects/tandard_SWAP_LVM.md)
+   - **File**: [**Storage Management on Linux**](Linux_SysOps_Projects/Standard_SWAP_LVM.md)
 
 - **Linux System Assessment**
    - **Description**: Perform a range of tasks on a Linux system as part of an in-depth system assessment.
