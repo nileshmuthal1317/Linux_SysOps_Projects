@@ -10,51 +10,51 @@ This repository contains a collection of projects focused on various Linux servi
 
 - **SSH Service Implementation**
   - **Description**: Learn how to implement secure remote access via SSH, enabling encrypted command-line communication.
-  - **File**: [`SSH_Service.md`](SSH_Service.md)
+  - **File**: [**SSH Service Implementation**](SSH_Service.md)
 
 - **Apache Web Server Deployment**
    - **Description**: Set up an Apache web server to serve web content and handle HTTP requests efficiently.
-   - **File**: [`Apache_Web_Server.md`](Apache_Web_Server.md)
+   - **File**: [**Apache Web Server Deployment**](Apache_Web_Server.md)
 
 - **MySQL/MariaDB Database Management**
    - **Description**: Install and manage relational databases using MySQL or MariaDB.
-   - **File**: [`Relational_Databases.md`](Relational_Databases.md)
+   - **File**: [**MySQL/MariaDB Database Management**](Relational_Databases.md)
 
 - **DNS (Domain Name System) Server Deployment**
    - **Description**: Configure a DNS server to resolve domain names into IP addresses, and vice versa.
-   - **File**: [`Bind9_DNS.md`](Bind9_DNS.md)
+   - **File**: [**DNS (Domain Name System) Server Deployment**](Bind9_DNS.md)
 
 - **SSL Certificate Management**
    - **Description**: Manage SSL certificates to ensure secure communication between servers and clients.
-   - **File**: [`OpenSSL.md`](OpenSSL.md)
+   - **File**: [**SSL Certificate Management**](OpenSSL.md)
 
 - **Nginx Web Server Deployment**
    - **Description**: Set up an Nginx web server to serve web content and handle HTTP requests efficiently.
-   - **File**: [`Nginx_Web_Server.md`](Nginx_Web_Server.md)
+   - **File**: [**Nginx Web Server Deployment**](Nginx_Web_Server.md)
 
 - **Storage Management on Linux**
    - **Description**: Learn how to manage storage solutions in Linux, including standard, SWAP, and LVM configurations.
-   - **File**: [`Standard_SWAP_LVM.md`](Standard_SWAP_LVM.md)
+   - **File**: [**Storage Management on Linux**](Standard_SWAP_LVM.md)
 
 - **Linux System Assessment**
    - **Description**: Perform a range of tasks on a Linux system as part of an in-depth system assessment.
-   - **File**: [`Linux_Assessments.md`](Linux_Assessments.md)
+   - **File**: [**Linux System Assessment**](Linux_Assessments.md)
 
 - **FTP, NTP, and NFS Services**
    - **Description**: Deploy and manage FTP, NTP, and NFS services on a Linux environment.
-   - **File**: [`NTP_FTP_NFS_Services.md`](NTP_FTP_NFS_Services.md)
+   - **File**: [**FTP, NTP, and NFS Services**](NTP_FTP_NFS_Services.md)
 
 - **Cron Job Automation**
    - **Description**: Automate routine tasks by scheduling them with Cron, a time-based job scheduler in Linux.
-   - **File**: [`Cronjobs.md`](Cronjobs.md)
+   - **File**: [**Cron Job Automation**](Cronjobs.md)
 
 - **Understanding Email Server Functionality**
    - **Description**: Learn the fundamental components and workings of an email server.
-   - **File**: [`Email_Server.md`](Email_Server.md)
+   - **File**: [**Understanding Email Server Functionality**](Email_Server.md)
 
 - **User and Group Management**
    - **Description**: Manage users, groups, and permissions on a Linux system for effective access control.
-   - **File**: [`User_Group_Permission.md`](User_Group_Permission.md)
+   - **File**: [**User and Group Management**](User_Group_Permission.md)
 
 <!--
 - **Web Application Deployment Project (PHP, Python, Node.js, Java)**
